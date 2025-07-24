@@ -1,0 +1,183 @@
+.services
+	&__title 
+		text-wrap: balance
+		text-align: center
+
+		font-weight: 700
+		+adap('font-size', 29, 26)
+		line-height: 1.16
+		color: #f0f4f9
+
+	&-wrapper
+		display: flex
+		flex-wrap: wrap
+		gap: 12px
+		justify-content: center
+
+	&__item 
+		display: flex
+		align-items: center
+		gap: 8px
+		+adap('padding-block', 9, 6)
+		padding-inline: 16px
+
+		background: $gray
+		border-radius: 24px
+
+		font-weight: 600
+		+adap('font-size', 16, 14)
+		color: #0f1723
+
+
+	@media (max-width: 575px)
+		&-wrapper
+			display: grid
+			grid-template-columns: repeat(2, max-content)
+			justify-items: center
+			margin-inline: auto
+			max-width: 340px
+
+		&__item 
+			min-width: 120px
+			display: inline-flex
+
+			&:nth-child(1)
+				translate: 34px -9px
+				rotate: 4deg
+
+			&:nth-child(2)
+				translate: 12px 8px
+
+			&:nth-child(3)
+				translate: 22px -6px
+				order: -1
+				rotate: -11deg
+
+			&:nth-child(4)
+				translate: -3px -13px
+				rotate: 9deg
+
+			&:nth-child(5)
+				translate: 35px 1px
+				rotate: -2deg
+				grid-column: 1/-1
+
+			&:nth-child(6)
+				translate: 1px 10px
+				rotate: 5deg
+				grid-column: 1/-1
+
+	@media (max-width: 375px)
+		&-wrapper
+			+adap('max-width', 340, 310, 375, 320 , $min: true)
+			+adap('margin-left', -1, -4, 375, 320 , $min: true)
+			
+		&__item 
+			+adap('font-size', 14, 13, 375, 320 , $min: true)
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

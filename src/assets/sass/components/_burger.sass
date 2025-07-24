@@ -1,0 +1,40 @@
+$burgerWidth: 36px
+$burgerHeight: 36px
+$burgerLineOffset: 8
+$burgerLineHeight: 2px
+$burgerColor: $active
+	
+.menu
+	&-link
+		position: relative
+		order: 10
+
+		flex: 0 0 $burgerWidth
+		width: $burgerWidth
+		height: $burgerHeight
+
+		background: rgba(255, 255, 255, 0.06) 
+		border-radius: 50%
+
+		&:after
+			content: ''
+
+			position: absolute
+			left: 50%
+			top: 50%
+			translate: -50% -50%
+			
+			width: 35%
+			height: 35%
+
+			background: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23C6CDD9' /%3E%3Ccircle cx='10' cy='2' r='2' fill='%23C6CDD9' /%3E%3Ccircle cx='10' cy='10' r='2' fill='%23C6CDD9' /%3E%3Ccircle cx='2' cy='10' r='2' fill='%23C6CDD9' /%3E%3C/svg%3E") center / contain no-repeat
+			+t
+
+		@media (min-width: #{$burgerMedia+1+px})
+			display: none
+
+		&.active 
+			background: $text
+
+			&:after
+				filter: invert(1)

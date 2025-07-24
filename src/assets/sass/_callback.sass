@@ -1,0 +1,181 @@
+.callback
+	&-wrapper
+		position: relative
+		z-index: 1
+		+adap('padding-block', 42, 36)
+		+adap('padding-left', 42, 32)
+		+adap('padding-right', 122, 24)
+		display: grid
+		grid-template-columns: 1fr auto 
+		+adap('gap', 126, 20)
+		align-items: start
+
+		border-radius: 24px
+
+	&__bg 
+		position: absolute
+		left: 0
+		top: 0
+		z-index: -1
+		width: 100%
+		height: 100%
+		pointer-events: none
+
+		img 
+			width: 100%
+			object-fit: cover
+			border-radius: 24px
+
+	&__left 
+		display: grid
+		+adap('gap', 40, 30)
+		justify-items: start
+		max-width: 512px
+
+	&__list 
+		display: grid
+		+adap('gap', 24, 16)
+		counter-reset: number
+		text-wrap: balance
+
+		li
+			display: flex
+			align-items: center
+			+adap('gap', 20, 16)
+
+			font-weight: 700
+			+adap('font-size', 18, 16)
+			line-height: 1.25
+
+			&:before
+				content: counter(number)
+
+				display: flex
+				align-items: center
+				justify-content: center
+				+adap('width', 38, 32)
+				+adap('height', 38, 32)
+				+adap('flex-basis', 38, 32)
+				flex-grow: 0
+				flex-shrink: 0
+
+				background: $active
+				border-radius: 50%
+
+				counter-increment: number
+
+	@media (max-width: 991px)
+		
+		&-wrapper
+			grid-template-columns: 100%
+			justify-items: start
+			row-gap: 29px
+			padding-bottom: 266px
+
+		&__left 
+			display: contents
+
+		&__button 
+			order: 1
+
+		&__bg 
+			img 
+				object-position: 0 91%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

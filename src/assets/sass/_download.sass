@@ -1,0 +1,163 @@
+.download
+	&-wrapper
+		position: relative
+		z-index: 1	
+		min-height: 278px
+		display: flex
+		gap: 32px
+		+adap('gap', 32, 16)
+		align-items: flex-start
+		+adap('padding-block', 52, 40)
+		+adap('padding-inline', 48, 22)
+
+		border-radius: 24px
+		overflow: hidden
+
+	&__bg 
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		z-index: -1
+		pointer-events: none
+
+		img 
+			width: 100%
+			object-fit: cover
+
+			@media (max-width: 1199px)
+				object-position: 63%
+
+
+	&__links
+		display: grid
+		gap: 20px
+
+	&__link 
+		display: flex
+		border-radius: 16px
+		+t 
+
+		+hov
+			scale: 1.02
+
+	
+	@media (max-width: 767px)
+		&-wrapper
+			display: grid
+			grid-template-columns: 100%
+			min-height: 423px
+			align-items: start
+			align-content: start
+
+		&__title 
+			br
+				display: none
+
+		&__link 
+			img 
+				max-width: 171px
+				height: auto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

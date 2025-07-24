@@ -1,0 +1,43 @@
+$arrow-width: 20
+$arrow-height: 20
+
+summary 
+	display: flex
+	justify-content: space-between
+	align-items: center
+	gap: 12px
+	width: 100% 
+	
+	cursor: pointer
+	user-select: none
+	+t
+
+	&::-webkit-details-marker
+		display: none
+
+	&:focus-visible
+		color: $active
+
+	&:after
+		content: ''
+
+		flex: 0 0 #{$arrow-width+px}
+		width: #{$arrow-width+px}
+		height: #{$arrow-height+px}
+		
+		+mask(url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.0249H11V11.0249' stroke='%230F1723' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M11 1.0249L1 11.0249' stroke='%230F1723' stroke-width='1.5' stroke-linecap='round' /%3E%3C/svg%3E") center / 70% no-repeat, currentColor) 
+		+t
+
+	&:last-child
+		&:after
+			display: none
+
+	&.active  
+		&:after
+			rotate: 135deg
+		
+	&[disabled]
+		&:after
+			display: none
+
+

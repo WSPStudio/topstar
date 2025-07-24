@@ -1,0 +1,154 @@
+.components
+	&__title 
+		@media (max-width: 575px)
+			br 
+				display: none
+
+	&-wrapper
+		display: grid
+		grid-template-columns: 1fr percent(673, $containerWidth) 
+		+adap('column-gap', 80, 20)
+		row-gap: 32px
+		align-items: start
+
+	&__left 
+		display: grid
+		+adap('gap', 32, 16)
+
+	&__text 
+		color: rgba(255, 255, 255, 0.82)
+
+	&__right 
+		display: grid
+		gap: 12px
+
+		@media (min-width: #{$firstBreakpoint + 1 + px})
+			padding-top: 24px
+
+		&-title
+			color: #555a64
+
+	&__items 
+		display: grid
+		grid-template-columns: percent(311, 673) 1fr
+		+adap('gap', 16, 12)
+
+	&__item 
+		display: flex
+		align-items: center
+		gap: 14px
+		padding: 20px
+
+		background: $gray
+		border-radius: 24px
+
+		text-wrap: balance
+		color: $text_dark
+
+		&-title 
+			font-weight: 700
+			line-height: 1.25
+
+
+	@media (max-width: #{$firstBreakpoint + px})
+		&-wrapper
+			column-gap: 20px
+
+		&__items
+			grid-template-columns: 100%
+
+	@media (max-width: 767px)
+		&-wrapper
+			grid-template-columns: 100%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

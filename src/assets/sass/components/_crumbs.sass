@@ -1,0 +1,48 @@
+$row-gap: 8px 
+$column-gap: 20
+$column-gap-mobile: 16
+
+.crumbs
+	display: flex
+	align-items: center
+	flex-wrap: wrap
+	+adap('column-gap', $column-gap, $column-gap-mobile)
+	row-gap: $row-gap
+	 
+	+adap('font-size', 16, 14)
+	line-height: 1.25
+
+	&-wrapper
+		+adap('padding-top', 40, 32)
+		padding-bottom: 20px
+
+	li 
+		&:not(:last-child)
+			color: $active
+
+			&:before
+				color: #f0f4f9
+
+			@media (any-hover: hover)
+				&:hover
+					color: $active
+
+					&:before
+						color: $gray
+
+		&:last-child
+			pointer-events: none
+
+			a
+				cursor: default 
+
+		&:not(:last-child)
+			position: relative
+			
+			&:before
+				content: '/'
+
+				position: absolute
+				+adap('right', math.div($column-gap, -2), math.div($column-gap-mobile, -2))
+				top: 50%
+				translate: 50% -50%

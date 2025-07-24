@@ -1,0 +1,30 @@
+@@include('assets/html/head.html', {
+"class": '""'
+})
+
+
+<div class="header-main">
+	<div class="section-small-bottom">
+		@@include("assets/html/crumbs.html", {
+		"list": [
+		{
+		"title":"Текстовая",
+		"link":'"#"'
+		},
+		]
+		})
+	</div>
+	<div class="container">
+		<div class="text-block">
+			<ul>
+				<li><a target="_blank" href="/topstar">Главная</a></li>
+				<li><a target="_blank" href="404.html">404</a></li>
+				<li><a target="_blank" href="text.html">Текстовая</a></li>
+				<li><a data-modal="popup-call">Оставьте заявку</a></li>
+				<li><a data-modal="popup-thank">Спасибо</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+@@include('assets/html/foot.html')

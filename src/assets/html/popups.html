@@ -1,0 +1,49 @@
+<!-- Модалки -->
+
+<div class="popups">
+	<!-- Заказать звонок -->
+	<div class="popup popup-call" id="popup-call">
+		<div class="popup__dialog">
+			<div class="popup__content">
+				<button class="popup__close" type="button" data-popup-close>
+					<svg class="close">
+						<use xlink:href="assets/img/sprite.svg#close"></use>
+					</svg>
+				</button>
+				<div class="form popup__form">
+					<div class="title-2 popup__title">Оставьте заявку на консультацию</div>
+					<form>
+						<input type="hidden" name="info" class="popup-info">
+						<div class="input-wrapper">
+							<input class="input" type="text" name="name" placeholder="Ваше имя">
+							<input class="input" type="tel" name="phone" placeholder="Ваш номер телефона" required>
+							<button class="button submit">Отправить</button>
+							<label class="checkbox">
+								<input class="checkbox__input" type="checkbox" checked required>
+								<span class="checkbox__text">
+									Я соглашаюсь с <a href="text.html" class="underline" target="_blank">пользовательским соглашением</a> и <a href="text.html" class="underline" target="_blank">политикой конфиденциальности</a></span>
+							</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Окно благодарности -->
+	<div class="popup popup-thank" id="popup-thank">
+		<div class="popup__dialog">
+			<div class="popup__content">
+				<button class="popup__close" type="button" data-popup-close>
+					<svg class="close">
+						<use xlink:href="assets/img/sprite.svg#close"></use>
+					</svg>
+				</button>
+				<div class="title-2 popup__title">Спасибо <br>
+					за обращение!</div>
+				<div class="popup__subtitle">Наш менеджер скоро свяжется с вами</div>
+				<a href="/topstar" class="button link-button">Вернуться на главную страницу</a>
+			</div>
+		</div>
+	</div>
+</div>
