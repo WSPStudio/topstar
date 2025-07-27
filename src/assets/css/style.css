@@ -534,7 +534,7 @@ a,
 }
 
 body {
-  background: #090c11
+  background: #0f1723
 }
 
 .section__top {
@@ -861,7 +861,8 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 20px
+  gap: 20px;
+  border-top: 2px solid rgba(64, 70, 80, .2509803922)
 }
 
 .footer__menu {
@@ -1281,8 +1282,7 @@ summary[disabled]:after {
   padding-bottom: 9px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 0;
-  border-radius: 25px
+  padding-bottom: 0
 }
 
 @supports (-moz-appearance:none) {
@@ -1313,10 +1313,6 @@ summary[disabled]:after {
   color: #555a64
 }
 
-.text-block table td {
-  white-space: nowrap
-}
-
 .text-block table th {
   text-align: left;
   font-weight: 400
@@ -1325,6 +1321,11 @@ summary[disabled]:after {
 .text-block table thead {
   background: #000;
   color: #fff
+}
+
+.text-block table tbody th {
+  font-weight: 700;
+  color: #000
 }
 
 .text-block table tbody tr:nth-child(even) {
@@ -1518,7 +1519,8 @@ summary[disabled]:after {
 
 .tools__item-img img {
   width: 100%;
-  object-fit: cover
+  object-fit: cover;
+  object-position: top
 }
 
 .tools__item-content {
@@ -1567,10 +1569,19 @@ summary[disabled]:after {
   max-width: 512px
 }
 
+.callback__button {
+  border-color: rgba(255, 255, 255, .44)
+}
+
+.callback__button:focus-visible {
+  border-color: #cb0c16
+}
+
 .callback__list {
   display: grid;
   counter-reset: number;
-  text-wrap: balance
+  text-wrap: balance;
+  overflow: hidden
 }
 
 .callback__list li {
@@ -1660,6 +1671,26 @@ summary[disabled]:after {
 
   .header__mobile {
     display: contents
+  }
+
+  .callback__list li:first-child {
+    position: relative
+  }
+
+  .callback__list li:first-child:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    z-index: -1;
+    width: 2px;
+    height: 100vh;
+    background-image: url("data:image/svg+xml,%3Csvg width='2' height='258' viewBox='0 0 2 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0V258' stroke='%23DFE6FF' stroke-opacity='0.3' stroke-width='2' stroke-dasharray='6 6' /%3E%3C/svg%3E")
+  }
+}
+
+@media (min-width:768px) and (min-width:1301px) {
+  .callback__list li:first-child:after {
+    left: 18px
   }
 }
 
@@ -1984,6 +2015,10 @@ summary[disabled]:after {
 
   .text-block .table {
     margin-bottom: 32px
+  }
+
+  .text-block .table {
+    border-radius: 24px
   }
 
   .text-block table {
@@ -2365,6 +2400,10 @@ summary[disabled]:after {
     margin-bottom: round(clamp(20px, 17.0873786408px + .7766990291vw, 32px), 1px)
   }
 
+  .text-block .table {
+    border-radius: round(clamp(12px, 9.0873786408px + .7766990291vw, 24px), 1px)
+  }
+
   .text-block table {
     font-size: round(clamp(14px, 13.5145631068px + .1294498382vw, 16px), 1px)
   }
@@ -2662,6 +2701,10 @@ summary[disabled]:after {
     height: auto
   }
 
+  .services {
+    background: url(../img/services/bg.svg) center top/contain no-repeat
+  }
+
   .tariff__row {
     justify-content: center
   }
@@ -2703,11 +2746,12 @@ summary[disabled]:after {
   }
 
   .header-main__bg {
-    bottom: 116px
+    height: round(clamp(309px, 346.375px - 6.5vw, 322px), 1px);
+    bottom: round(clamp(90px, 164.75px - 13vw, 116px), 1px)
   }
 
   .header-main__bg img {
-    object-position: bottom
+    object-position: top
   }
 
   .header-main-wrapper {
@@ -2748,6 +2792,10 @@ summary[disabled]:after {
 
   .components__title br {
     display: none
+  }
+
+  .services {
+    padding-top: 40px
   }
 
   .services-wrapper {
@@ -2807,17 +2855,13 @@ summary[disabled]:after {
   .tools__item-text {
     color: rgba(255, 255, 255, .72)
   }
-}
 
-@media (max-width:575px) and (max-width:1300px) {
-  .header-main__bg {
-    height: round(clamp(422px, 397.7281553398px + 6.4724919094vw, 522px), 1px)
+  .tools-wrapper {
+    justify-items: center
   }
-}
 
-@media (max-width:575px) and (max-height:900px) {
-  .header-main-wrapper {
-    min-height: calc(100dvh - 68px)
+  .tools__item {
+    max-width: 343px
   }
 }
 
@@ -2847,12 +2891,6 @@ summary[disabled]:after {
   }
 }
 
-@media (max-width:575px) and (min-width:1301px) {
-  .header-main__bg {
-    height: 522px
-  }
-}
-
 @media (max-width:991px) and (min-width:576px) {
   .footer__bottom>:nth-child(2n) {
     text-align: right
@@ -2870,6 +2908,12 @@ summary[disabled]:after {
 
   .services__item {
     font-size: round(clamp(13px, 7.1818181818px + 1.8181818182vw, 14px), 1px)
+  }
+}
+
+@media (min-width:768px) and (max-width:1300px) {
+  .callback__list li:first-child:after {
+    left: round(clamp(15px, 14.2718446602px + .1941747573vw, 18px), 1px)
   }
 }
 
@@ -2949,5 +2993,9 @@ summary[disabled]:after {
 
   .tariff__item:hover .tariff__item-title {
     color: #cb0c16
+  }
+
+  .callback__button:hover {
+    border-color: #cb0c16
   }
 }

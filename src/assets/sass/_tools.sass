@@ -27,6 +27,7 @@
 			img 
 				width: 100%
 				object-fit: cover
+				object-position: top
 
 		&-content 
 			display: grid
@@ -57,7 +58,12 @@
 		&__item 
 			aspect-ratio: 343/510
 
+	@media (max-width: 575px)
+		&-wrapper
+			justify-items: center
 
+		&__item 
+			max-width: 343px
 
 
 

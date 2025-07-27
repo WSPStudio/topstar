@@ -109,7 +109,6 @@
 		@media (min-width: 768px)
 			display: contents
 
- 
 	&-main 
 		position: relative
 		z-index: 1
@@ -159,7 +158,6 @@
 			display: flex
 			flex-wrap: wrap
 			gap: 12px
-
 
 	@media (max-width: #{$burgerMedia+px})
 		$padding-top: 40
@@ -223,11 +221,11 @@
 	@media (max-width: 575px)
 		&-main 
 			&__bg 
-				+adap('height', 522, 422)
-				bottom: 116px
+				+adap('height', 309, 322, 575)
+				+adap('bottom', 90, 116, 575)
 				
 				img 
-					object-position: bottom 
+					object-position: top 
 
 
 
@@ -235,9 +233,6 @@
 				display: grid
 				grid-template-rows: auto 1fr auto
 				min-height: 700px
-
-				@media (max-height: 900px)
-					min-height: calc(100dvh - 68px)
 
 			&__subtitle 
 				// +adap('margin-bottom', 24, 376, 575)				

@@ -32,11 +32,18 @@
 		justify-items: start
 		max-width: 512px
 
+	&__button 
+		border-color: rgba(#fff, .44)
+
+		+hov
+			border-color: $active
+
 	&__list 
 		display: grid
 		+adap('gap', 24, 16)
 		counter-reset: number
 		text-wrap: balance
+		overflow: hidden
 
 		li
 			display: flex
@@ -46,6 +53,23 @@
 			font-weight: 700
 			+adap('font-size', 18, 16)
 			line-height: 1.25
+
+			&:first-child
+				@media (min-width: 768px)
+					position: relative
+
+					&:after
+						content: ''
+
+						position: absolute
+						+adap('left', 18, 15)
+						top: 5px
+						z-index: -1
+
+						width: 2px
+						height: 100vh
+
+						background-image: url("data:image/svg+xml,%3Csvg width='2' height='258' viewBox='0 0 2 258' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0V258' stroke='%23DFE6FF' stroke-opacity='0.3' stroke-width='2' stroke-dasharray='6 6' /%3E%3C/svg%3E")
 
 			&:before
 				content: counter(number)
