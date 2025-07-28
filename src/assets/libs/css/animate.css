@@ -14,6 +14,16 @@
 	opacity: 1 !important
 }
 
+html.no-timeline .fadeIn,
+html.no-timeline .fadeInUp {
+	view-timeline-name: none !important;
+	view-timeline-axis: none !important;
+	animation-timeline: none !important;
+	animation-range: none !important;
+	opacity: 1 !important;
+	animation: none !important;
+}
+
 @media (prefers-reduced-motion:reduce),
 print {
 	.animated {
@@ -113,4 +123,5 @@ print {
 		opacity: 0;
 		animation: 1.4s fadeInUp forwards
 	}
+
 }

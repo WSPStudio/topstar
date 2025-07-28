@@ -195,16 +195,16 @@ new WOW().init({
 	mobile: false
 });
 
-// Сброс анимаций 
-const mediaQuery = window.matchMedia('(min-width: 768px)')
-let wasMobile = window.innerWidth <= 767
 
-function disableAnimationsOnDesktop() {
-	if (wasMobile && mediaQuery.matches) {
-		document.querySelectorAll('.fadeIn, .fadeInUp').forEach(el => {
-			el.classList.add('no-animation')
-		})
+// Сброс анимаций
+let wasMobile = window.innerWidth <= 767;
+
+window.addEventListener('resize', () => {
+	const isNowDesktop = window.innerWidth >= 768;
+
+	if (wasMobile && isNowDesktop) {
+		document.documentElement.classList.add('no-timeline');
 	}
-}
 
-mediaQuery.addEventListener('change', disableAnimationsOnDesktop)
+	wasMobile = window.innerWidth <= 767;
+});
