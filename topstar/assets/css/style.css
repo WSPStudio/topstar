@@ -748,7 +748,8 @@ body {
 }
 
 .popup-auth .popup__title {
-  max-width: 100%
+  max-width: 100%;
+  text-align: center
 }
 
 .popup-auth .popup__close {
