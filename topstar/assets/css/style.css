@@ -2746,8 +2746,8 @@ summary[disabled]:after {
   }
 
   .header-main__bg {
-    height: round(clamp(309px, 346.375px - 6.5vw, 322px), 1px);
-    bottom: round(clamp(90px, 164.75px - 13vw, 116px), 1px)
+    height: 400px;
+    bottom: round(clamp(140px, 65px + 20vw, 180px), 1px)
   }
 
   .header-main__bg img {
@@ -2757,7 +2757,7 @@ summary[disabled]:after {
   .header-main-wrapper {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    min-height: 700px
+    min-height: 785px
   }
 
   .header-main__buttons {

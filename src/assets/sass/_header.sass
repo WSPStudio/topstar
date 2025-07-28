@@ -221,18 +221,16 @@
 	@media (max-width: 575px)
 		&-main 
 			&__bg 
-				+adap('height', 309, 322, 575)
-				+adap('bottom', 90, 116, 575)
+				height: 400px
+				+adap('bottom', 180, 140, 575)
 				
 				img 
-					object-position: top 
-
-
+					object-position: top   
 
 			&-wrapper
 				display: grid
 				grid-template-rows: auto 1fr auto
-				min-height: 700px
+				min-height: 785px
 
 			&__subtitle 
 				// +adap('margin-bottom', 24, 376, 575)				

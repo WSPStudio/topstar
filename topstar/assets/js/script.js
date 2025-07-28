@@ -1145,12 +1145,53 @@
 						const spollerTitle = el.closest('summary');
 						const spollerBlock = spollerTitle.closest('details');
 						const oneSpoller = spollersBlock.hasAttribute('data-one-spoller');
-						const scrollSpoller = spollerBlock.hasAttribute('data-spoller-scroll');
-						const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+						spollerBlock.hasAttribute('data-spoller-scroll');
+						const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 300;
 
 						if (!spollersBlock.querySelectorAll('._slide').length) {
 							if (oneSpoller && !spollerBlock.open) {
+								const prevOpen = spollersBlock.querySelector('details[open]');
+								let shouldScroll = false;
+
+								if (prevOpen) {
+									const prevContent = prevOpen.querySelector('.tariff__item-content');
+									const prevContentHeight = prevContent?.scrollHeight || 0;
+									const windowHeight = window.innerHeight;
+
+									// console.log('⚠️ Предыдущий спойлер открыт:', prevOpen)
+									// console.log('📏 Высота контента предыдущего спойлера:', prevContentHeight)
+									// console.log('📏 Высота окна:', windowHeight)
+
+									if (prevContentHeight > windowHeight * 0.6) {
+										shouldScroll = true;
+										// console.log('✅ Контент больше 60% окна, включаем scroll')
+									}
+								}
+
 								hideSpollersBody(spollersBlock);
+
+								if (shouldScroll) {
+									spollerBlock.querySelector('summary');
+									headerTop.offsetHeight;
+
+									// Скроллим через задержку после завершения slideUp
+									spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+
+									scrollToSmoothly(spollersBlock.closest('[data-spollers]').getBoundingClientRect().top + window.scrollY, 300);
+
+									// setTimeout(() => {
+									// 	const rect = summary.getBoundingClientRect()
+									// 	const scrollTarget = rect.top + window.scrollY
+									// 	const finalScrollTop = scrollTarget - headerHeight - 20
+
+									// 	console.log('🕒 Через', spollerSpeed, 'мс, скроллим к summary')
+									// 	console.log('📍 summary.getBoundingClientRect().top (после закрытия):', rect.top)
+									// 	console.log('📍 scrollTarget:', scrollTarget)
+									// 	console.log('🎯 Итоговая scroll-точка:', finalScrollTop)
+
+									// 	scrollToSmoothly(finalScrollTop, 300)
+									// }, spollerSpeed + 20) // чуть больше, чем slideUp
+								}
 							}
 
 							!spollerBlock.open ? spollerBlock.open = true : setTimeout(() => { spollerBlock.open = false; }, spollerSpeed);
@@ -1158,16 +1199,6 @@
 							spollerTitle.classList.toggle('active');
 							_slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
 
-							if (scrollSpoller && spollerTitle.classList.contains('active')) {
-								const scrollSpollerValue = spollerBlock.dataset.spollerScroll;
-								const scrollSpollerOffset = +scrollSpollerValue ? +scrollSpollerValue : 0;
-								const scrollSpollerNoHeader = spollerBlock.hasAttribute('data-spoller-scroll-noheader') ? document.querySelector('.header').offsetHeight : 0;
-
-								window.scrollTo({
-									top: spollerBlock.offsetTop - (scrollSpollerOffset + scrollSpollerNoHeader),
-									behavior: 'smooth'
-								});
-							}
 						}
 					}
 				}
