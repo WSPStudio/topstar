@@ -742,6 +742,40 @@ body {
   grid-template-columns: 100%
 }
 
+.popup-auth .popup__content {
+  width: 650px;
+  padding-block: 48px
+}
+
+.popup-auth .popup__title {
+  max-width: 100%
+}
+
+.popup-auth .popup__close {
+  right: 16px;
+  top: 20px
+}
+
+.popup__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start
+}
+
+.popup__row .button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  min-height: auto;
+  min-height: 48px
+}
+
+.popup__col {
+  display: grid
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -1872,6 +1906,18 @@ summary[disabled]:after {
     height: 28px
   }
 
+  .popup-auth .popup__title {
+    margin-bottom: 28px
+  }
+
+  .popup__row {
+    gap: 24px
+  }
+
+  .popup__col {
+    gap: 12px
+  }
+
   .header-main-wrapper {
     padding-top: 83px
   }
@@ -2253,6 +2299,18 @@ summary[disabled]:after {
 
   .popup__close svg {
     height: round(clamp(20px, 18.0582524272px + .5177993528vw, 28px), 1px)
+  }
+
+  .popup-auth .popup__title {
+    margin-bottom: round(clamp(20px, 18.0582524272px + .5177993528vw, 28px), 1px)
+  }
+
+  .popup__row {
+    gap: round(clamp(16px, 14.0582524272px + .5177993528vw, 24px), 1px)
+  }
+
+  .popup__col {
+    gap: round(clamp(8px, 7.0291262136px + .2588996764vw, 12px), 1px)
   }
 
   .header-main-wrapper {
@@ -2736,6 +2794,14 @@ summary[disabled]:after {
   .title-2 {
     font-weight: 700;
     line-height: 1.16
+  }
+
+  .popup-auth .popup__content {
+    text-align: center
+  }
+
+  .popup__row {
+    grid-template-columns: 100%
   }
 
   .popup__dialog {

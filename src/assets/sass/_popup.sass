@@ -91,7 +91,46 @@ $close-color: $gray
 				display: grid
 				grid-template-columns: 100%
 
+
+	&-auth
+		.popup
+			&__content 
+				width: 650px
+				padding-block: 48px
+
+				@media (max-width: 575px)
+					text-align: center
+ 
+			&__title 
+				max-width: 100%
+				+adap('margin-bottom', 28, 20)
+
+			&__close 
+				right: 16px
+				top: 20px
+
+	&__row 
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		+adap('gap', 24, 16)
+		align-items: start
+
+		@media (max-width: 575px)
+			grid-template-columns: 100%
+
+		.button 
+			width: 100%
+			display: flex
+			justify-content: center
+			align-items: center
+
+			font-size: 14px
+			min-height: auto
+			min-height: 48px
 				
+	&__col 
+		display: grid
+		+adap('gap', 12, 8)
 
 
 	@media (max-width: 575px)
