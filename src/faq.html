@@ -1,0 +1,58 @@
+@@include('assets/html/head.html', {
+"class" : '" "'
+})
+
+<div class="header-main">
+	<div class="section-small-bottom">
+		@@include("assets/html/crumbs.html", {
+		"list": [
+		{
+		"title":"FAQ",
+		"link":'"#"'
+		},
+		]
+		})
+	</div>
+
+	<div class="container">
+		<h1 class="title-2 faq__title">Часто задаваемые вопросы</h1>
+		<div class="faq-wrapper" data-spollers data-one-spoller>
+			<details class="faq__item">
+				<summary class="faq__item-title">TOPSTAR подходит для мероприятий с размещением по местам?</summary>
+				<div class="faq__item-content">
+					<div class="text-block faq__item-text">
+						<p>Да. Вы можете настроить рассадку, зоны, категории и гибкие цены.</p>
+					</div>
+				</div>
+			</details>
+			<details class="faq__item">
+				<summary class="faq__item-title">Можно ли интегрировать с моим сайтом?</summary>
+				<div class="faq__item-content">
+					<div class="text-block faq__item-text">
+						<p>Да. Мы предоставляем виджеты и API для встраивания.</p>
+					</div>
+				</div>
+			</details>
+			<details class="faq__item">
+				<summary class="faq__item-title">Как происходит техническая поддержка?</summary>
+				<div class="faq__item-content">
+					<div class="text-block faq__item-text">
+						<p>У нас есть техподдержка 24/7 по email, телефону и через Telegram.</p>
+					</div>
+				</div>
+			</details>
+			<details class="faq__item">
+				<summary class="faq__item-title">Можно ли ограничить доступ сотрудникам?</summary>
+				<div class="faq__item-content">
+					<div class="text-block faq__item-text">
+						<p>Да. Есть гибкая система ролей и уровней доступа.</p>
+					</div>
+				</div>
+			</details>
+		</div>
+	</div>
+
+</div>
+
+
+@@include('assets/html/foot.html')

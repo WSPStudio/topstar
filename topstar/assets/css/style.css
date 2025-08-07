@@ -800,7 +800,7 @@ body {
 
 .header__nav {
   position: relative;
-  translate: 0 -16px;
+  translate: 0 -17px;
   width: 404px;
   display: flex;
   justify-content: center;
@@ -1141,7 +1141,7 @@ summary:last-child:after {
 }
 
 summary.active:after {
-  rotate: 135deg
+  rotate: 90deg
 }
 
 summary[disabled]:after {
@@ -1571,6 +1571,45 @@ summary[disabled]:after {
 
 .tools__item-text {
   color: rgba(255, 255, 255, .82)
+}
+
+.faq__item {
+  position: relative;
+  padding-block: 16px
+}
+
+.faq__item:not(:first-child):before {
+  display: none
+}
+
+.faq__item:before,
+.faq__item:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background: rgba(64, 70, 80, .25)
+}
+
+.faq__item:before {
+  bottom: auto;
+  top: 0
+}
+
+.faq__item-title {
+  font-size: 18px;
+  font-weight: 700
+}
+
+.faq__item-text {
+  padding-top: 6px
+}
+
+.faq__item-text p {
+  color: #848892
 }
 
 .callback-wrapper {
@@ -2141,6 +2180,10 @@ summary[disabled]:after {
     padding-block: 32px
   }
 
+  .faq__title {
+    margin-bottom: 53px
+  }
+
   .callback-wrapper {
     padding-block: 42px
   }
@@ -2542,6 +2585,10 @@ summary[disabled]:after {
 
   .tools-wrapper {
     grid-template-columns: repeat(2, 1fr)
+  }
+
+  .faq__title {
+    margin-bottom: round(clamp(32px, 26.9029126214px + 1.359223301vw, 53px), 1px)
   }
 
   .callback-wrapper {
