@@ -1,0 +1,59 @@
+@@include('assets/html/head.html', {
+"class" : '" "'
+})
+
+<div class="header-main contact">
+	<div class="section-small-bottom">
+		@@include("assets/html/crumbs.html", {
+		"list": [
+		{
+		"title":"Контакты и форма связи",
+		"link":'"#"'
+		},
+		]
+		})
+	</div>
+
+	<div class="container">
+		<h1 class="title-2 contact__title">Хотите узнать больше?</h1>
+		<div class="contact-wrapper">
+			<div class="contact__item">
+				<div class="contact__item-title">Оставьте заявку — и&nbsp;мы свяжемся с&nbsp;вами</div>
+				<div class="form contact__form">
+					<form>
+						<div class="input-wrapper">
+							<input class="input" type="text" name="name" placeholder="Имя" required>
+							<input class="input" type="tel" name="phone" placeholder="Телефон" data-required-choice>
+							<input class="input" type="email" name="email" placeholder="Email" data-columns="2" data-required-choice>
+							<textarea class="textarea" name="message" cols="30" rows="5" data-columns="2" placeholder="Комментарий" required></textarea>
+							<button class="button submit">Отправить</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="contact__item">
+				<div class="contact__item-title">Или свяжитесь с нами самостоятельно</div>
+				<div class="contact__item-content">
+					<a href="tel:+77770000000" class="hover-active contact__item-tel">+7 (777) 000-00-00</a>
+					<a href="mailto:hello@topstar.kz" class="hover-active contact__item-email">hello@topstar.kz</a>
+					<div class="social contact__item-social">
+						<a href="https://t.me/+70000000000" class="social__item" target="_blank">
+							<svg class="telegram-icon">
+								<use xlink:href="assets/img/sprite.svg#telegram"></use>
+							</svg>
+						</a>
+						<a href="https://wa.me/+70000000000" class="social__item" target="_blank">
+							<svg class="whatsapp-icon">
+								<use xlink:href="assets/img/sprite.svg#whatsapp"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+@@include('assets/html/foot.html')

@@ -297,7 +297,7 @@ button {
 input:focus-visible,
 textarea:focus-visible,
 button:focus-visible {
-  box-shadow: 0 0 0 1px #9b0911
+  box-shadow: 0 0 0 1px #cb0c16
 }
 
 a {
@@ -643,6 +643,7 @@ body {
 }
 
 .textarea {
+  height: 164px;
   padding-block: 12px
 }
 
@@ -1677,6 +1678,87 @@ summary[disabled]:after {
   counter-increment: number
 }
 
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr)
+}
+
+.contact__item {
+  display: grid;
+  gap: 16px;
+  grid-template-rows: 1fr auto;
+  padding: 22px;
+  background: #fff;
+  border-radius: 24px;
+  color: #0f1723
+}
+
+.contact__item-title {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.25
+}
+
+.contact__item-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  justify-content: space-between;
+  align-items: flex-end
+}
+
+.contact__item-tel {
+  flex: 1 0 100%
+}
+
+.contact__item-tel,
+.contact__item-email {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.2
+}
+
+.contact__item-social {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-self: flex-end;
+  margin-left: auto
+}
+
+.contact__item-social svg {
+  max-width: 36px;
+  max-height: 30px
+}
+
+.contact__item-social svg:focus-visible {
+  fill: #cb0c16
+}
+
+.contact__form .input-wrapper {
+  grid-template-columns: repeat(2, 1fr)
+}
+
+.contact__form [data-columns="2"] {
+  grid-column: 1/-1
+}
+
+.contact__form .input,
+.contact__form .textarea {
+  padding-inline: 16px;
+  border: 1px solid #dce2ed;
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555a64
+}
+
+.contact__form .submit {
+  min-width: 156px;
+  justify-self: start
+}
+
 @media (min-width:576px) {
   .container {
     width: 520px;
@@ -1920,10 +2002,6 @@ summary[disabled]:after {
 
   .input {
     height: 52px
-  }
-
-  .textarea {
-    height: 100px
   }
 
   .popup__content {
@@ -2227,6 +2305,14 @@ summary[disabled]:after {
   .callback__list li:before {
     flex-basis: 38px
   }
+
+  .contact__title {
+    margin-bottom: 53px
+  }
+
+  .contact-wrapper {
+    gap: 16px
+  }
 }
 
 @media (max-width:1300px) {
@@ -2319,10 +2405,6 @@ summary[disabled]:after {
 
   .input {
     height: round(clamp(48px, 47.0291262136px + .2588996764vw, 52px), 1px)
-  }
-
-  .textarea {
-    height: round(clamp(80px, 75.145631068px + 1.2944983819vw, 100px), 1px)
   }
 
   .popup__content {
@@ -2634,6 +2716,14 @@ summary[disabled]:after {
   .callback__list li:before {
     flex-basis: round(clamp(32px, 30.5436893204px + .3883495146vw, 38px), 1px)
   }
+
+  .contact__title {
+    margin-bottom: round(clamp(32px, 26.9029126214px + 1.359223301vw, 53px), 1px)
+  }
+
+  .contact-wrapper {
+    gap: round(clamp(12px, 11.0291262136px + .2588996764vw, 16px), 1px)
+  }
 }
 
 @media (max-width:1199px) {
@@ -2822,6 +2912,10 @@ summary[disabled]:after {
   .tools__item {
     aspect-ratio: 343/510
   }
+
+  .contact-wrapper {
+    grid-template-columns: 100%
+  }
 }
 
 @media (max-width:575px) {
@@ -2977,6 +3071,27 @@ summary[disabled]:after {
   .tools__item {
     max-width: 343px
   }
+
+  .faq__title {
+    font-size: 28px
+  }
+
+  .contact__title {
+    font-size: 28px
+  }
+
+  .contact__item-social {
+    margin-top: 38px
+  }
+
+  .contact__form .input-wrapper {
+    grid-template-columns: 100%
+  }
+
+  .contact__form .submit {
+    margin-top: 10px;
+    width: 100%
+  }
 }
 
 @media (min-width:576px) and (max-width:1199px) {
@@ -3028,6 +3143,12 @@ summary[disabled]:after {
 @media (min-width:768px) and (max-width:1300px) {
   .callback__list li:first-child:after {
     left: round(clamp(15px, 14.2718446602px + .1941747573vw, 18px), 1px)
+  }
+}
+
+@media (max-width:1300px) or (min-width:1301px) {
+  .contact__form .input {
+    height: 44px
   }
 }
 
@@ -3111,5 +3232,9 @@ summary[disabled]:after {
 
   .callback__button:hover {
     border-color: #cb0c16
+  }
+
+  .contact__item-social svg:hover {
+    fill: #cb0c16
   }
 }
