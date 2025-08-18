@@ -817,7 +817,7 @@
 
 			// Валидация email
 			if (input.type === 'email') {
-				input.value = input.value.replace(/[^0-9a-zA-Zа-яА-ЯёЁ@.-]+/g, '');
+				input.value = input.value.replace(/[^0-9a-zA-Z@.-]+/g, '');
 			}
 
 			// Валидация имени
