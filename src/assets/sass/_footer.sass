@@ -3,11 +3,14 @@
 		display: flex
 		align-items: flex-start
 		justify-content: space-between
-		gap: 20px
+		+adap('gap', 90, 20)
 		+adap('padding-top', 31, 22)
 		+adap('padding-bottom', 52, 26)
 
 		border-top: 2px solid #40465040
+
+	&__logo 
+		min-width: 143px
 
 	&__menu 
 		display: grid
@@ -25,27 +28,44 @@
 			+hov
 				color: $active
 
-	&__contacts 
-		display: grid
-		+adap('gap', 12, 20)
-
-		&>span 
-			font-size: 14px
-			color: #848892
-
 	&__right 
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		gap: 16px 
+
+	&__item 
 		display: grid
-		gap: 12px
+		grid-template-columns: 16px 1fr 
+		gap: 8px
+		flex: 1 0 250px
+		align-content: start
 
-	&__tel, 
-	&__email 
-		font-weight: 700
+		font-size: 14px
 
+		svg 
+			max-width: 16px
+			max-height: 10px
+
+			&.location-icon
+				max-width: 11px
+				max-height: 13px
+
+			margin-top: 0.2lh
+
+			fill: #848892
+
+		&-content 
+			display: grid
+			gap: 4px
+		
+		&-title 
+			color: #848892
 
 	&__social 
 		display: flex
 		align-items: center
-		gap: 16px
+		gap: 12px
 
 		.social
 			&__item 
@@ -56,8 +76,8 @@
 					scale: 1.2
 
 				svg 
-					max-width: 22px
-					max-height: 17px
+					max-width: 16px
+					max-height: 16px
 
 					&.telegram-icon
 						fill: #1e99f0
@@ -85,7 +105,22 @@
 			color: #fff
 	
 	
+	@media (max-width: #{$firstBreakpoint + px})
+		&__top 
+			gap: 24px
+
+		&__menu 
+			gap: 32px
+
 	@media (max-width: 991px)
+		&__top 
+			display: grid
+			grid-template-columns: 100%
+
+		@media (min-width: 768px)
+			&__item 
+				flex-basis: 200px
+
 		&__bottom
 			display: grid
 			grid-template-columns: repeat(2, 1fr)
@@ -96,31 +131,43 @@
 						text-align: right
 	
 	@media (max-width: 575px)
+		background: #0f1723
+
 		&__top 
 			display: grid
 			grid-template-columns: 100%
-			max-width: 312px	
 			gap: 7px
-			padding-top: 63px
+			padding-block: 20px
 
 		&__logo 
 			margin-bottom: 30px
-
-		&__bottom
-			&-wrapper
-				display: none
 
 		&__tel,
 		&__email 
 			padding-bottom: 12px
 			border-bottom: 1px solid #404650
 
-		&__social 
-			margin-top: 20px
+		&__item 
+			grid-template-columns: 100%
+			flex-basis: 40%
+			max-width: 200px
 
+			text-wrap: balance
 
+			svg 
+				margin-top: 0
 
+			&-title 
+				font-size: 12px
 
+		&__bottom 
+			grid-template-columns: 100%
+
+			&-wrapper
+				padding: 20px 0 
+				border-top: 1px solid #1B232E
+
+				background: none
 
 
 

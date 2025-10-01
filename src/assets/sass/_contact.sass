@@ -49,7 +49,10 @@
 			align-items: center
 			gap: 24px
 			justify-self: flex-end
-			margin-left: auto
+			margin-left: auto 
+
+			.social__item 
+				display: flex 
 
 			@media (max-width: 575px)
 				margin-top: 38px
@@ -60,6 +63,39 @@
 
 				+hov
 					fill: $active
+
+
+		.footer 
+			&__right 
+				+adap('row-gap', 32, 24)
+
+				@media (max-width: 575px)
+					display: grid
+					grid-template-columns: 100%
+
+			&__item 
+				font-size: 17px
+
+				@media (max-width: 575px)
+					grid-template-columns: auto 1fr 
+					max-width: none
+
+					&-title 
+						font-size: 16px
+ 
+					svg
+						margin-top: 0.2lh
+
+				&-text 
+					font-size: 18px
+					font-weight: 700
+
+				&:first-child
+					.footer__item-text 
+						font-size: 22px
+
+				&-content 
+					gap: 12px
 
 	&__form 
 		.input-wrapper 
